@@ -6,7 +6,6 @@ import com.pt.criticaltechworkschallenge.data.remote.NewsRemoteData
 import com.pt.criticaltechworkschallenge.domain.model.Article
 import com.pt.criticaltechworkschallenge.domain.repository.NewsRepository
 import kotlinx.coroutines.flow.Flow
-import java.io.IOException
 import javax.inject.Inject
 
 class NewsRepositoryImpl @Inject constructor(
