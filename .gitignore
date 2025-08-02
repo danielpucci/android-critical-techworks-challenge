@@ -1,0 +1,35 @@
+# Arquivos gerados pelo sistema de build
+.gradle/
+build/
+local.properties
+
+# Artefatos de build
+*.apk
+*.aab
+*.ap_
+
+# Arquivos do Android Studio e IntelliJ
+*.iml
+.idea/
+.DS_Store
+
+# Arquivos de dependências e caches
+.idea/caches/
+.idea/libraries/
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+
+# Arquivos de log e diagnóstico
+captures/
+*.hprof
+*.keystore
+*.jks
+
+# Arquivos do compilador C++
+.cxx/
+.externalNativeBuild/
+
+# Arquivos de configurações locais que não devem ser compartilhados
+# (local.properties já está coberto no início)
