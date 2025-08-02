@@ -9,7 +9,6 @@ class AuthInterceptor : Interceptor {
         val originalUrl = originalRequest.url
 
         val url = originalUrl.newBuilder()
-            .addQueryParameter("sources", "bbc-news")
             .build()
 
         val request = originalRequest.newBuilder()

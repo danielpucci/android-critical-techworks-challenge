@@ -61,6 +61,7 @@ fun NewsScreen(
     var menuExpanded by remember { mutableStateOf(false) }
 
     val availableSources = listOf(
+        "BBC News" to "bbc-news",
         "TechCrunch" to "techcrunch",
         "Bloomberg" to "bloomberg",
         "The Wall Street Journal" to "the-wall-street-journal",

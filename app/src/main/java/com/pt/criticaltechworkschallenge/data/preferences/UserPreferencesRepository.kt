@@ -19,8 +19,8 @@ class UserPreferencesRepository @Inject constructor(private val dataStore: DataS
 
     val selectedSource: Flow<Pair<String, String>> = dataStore.data
         .map { preferences ->
-            val sourceId = preferences[Keys.SELECTED_SOURCE_ID] ?: "techcrunch"
-            val sourceName = preferences[Keys.SELECTED_SOURCE_NAME] ?: "TechCrunch"
+            val sourceId = preferences[Keys.SELECTED_SOURCE_ID] ?: "bbc-news"
+            val sourceName = preferences[Keys.SELECTED_SOURCE_NAME] ?: "BBC News"
             Pair(sourceId, sourceName)
         }
 
