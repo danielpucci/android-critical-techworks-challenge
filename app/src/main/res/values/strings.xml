@@ -21,4 +21,8 @@
     <string name="article_author_unknown">Author Unknown</string>
     <string name="action_back">Back</string>
 
+    <string name="biometric_prompt_title">Authentication Required</string>
+    <string name="biometric_prompt_subtitle">Use your fingerprint to continue</string>
+    <string name="biometric_prompt_negative_button">Cancel</string>
+
 </resources>
