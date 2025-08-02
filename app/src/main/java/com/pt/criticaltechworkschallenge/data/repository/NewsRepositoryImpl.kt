@@ -13,8 +13,9 @@ class NewsRepositoryImpl @Inject constructor(
     private val remoteData: NewsRemoteData,
     private val articleDao: ArticleDao
 ) : NewsRepository {
-    override suspend fun refreshTopHeadlines() {
-        val response = remoteData.getTopHeadlines()
+    override suspend fun refreshTopHeadlines(sourceId: String) {
+        articleDao.deleteAllArticles()
+        val response = remoteData.getTopHeadlines(sourceId)
         if (response.isSuccessful && response.body() != null) {
             val domainArticles = response.body()!!.articleResponse.map { it.toDomain() }
             articleDao.insertOrUpdateArticles(domainArticles)

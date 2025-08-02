@@ -4,5 +4,5 @@ import com.pt.criticaltechworkschallenge.data.remote.dto.NewsApiResponseDto
 import retrofit2.Response
 
 interface NewsRemoteData {
-    suspend fun getTopHeadlines(): Response<NewsApiResponseDto>
+    suspend fun getTopHeadlines(sourceId: String?): Response<NewsApiResponseDto>
 }
