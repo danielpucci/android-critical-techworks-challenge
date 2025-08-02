@@ -1,5 +1,6 @@
 package com.pt.criticaltechworkschallenge.di
 
+import com.pt.criticaltechworkschallenge.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
 
@@ -12,7 +13,7 @@ class AuthInterceptor : Interceptor {
             .build()
 
         val request = originalRequest.newBuilder()
-            .addHeader("X-Api-Key", "2e1a6d5058ee4b88824194b40d1d5df6")
+            .addHeader("X-Api-Key", BuildConfig.NEWS_API_KEY)
             .url(url)
             .build()
 
