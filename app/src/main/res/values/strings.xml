@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Critical TechWorks Challenge</string>
+    <string name="top_headlines">Top Headlines</string>
+    <string name="retry">Retry</string>
+
+    <string name="news_provider_name">BBC News</string>
+    <string name="no_news_found">No news found.\nPull down to refresh.</string>
+    <string name="error_network_response_failed">Network response failed: %1$s</string>
+
+    <string name="error_prefix">An error occurred:</string>
+    <string name="error_unknown_with_message">An unknown error occurred: %1$s</string>
+    <string name="error_server_connection">"Couldn't reach the server. Check your internet connection: %1$s"</string>
+    <string name="error_unexpected">An unexpected error occurred</string>
+    <string name="error_no_headlines_found">No headlines found for %1$s.</string>
+    <string name="error_article_content_missing">Article content is missing. The Article model or data source might need an update.</string>
+    <string name="error_article_not_found_in_list">Article not found in the current list.</string>
+    <string name="error_loading_article_details">Could not load details for the selected article.</string>
+    <string name="error_article_identifier_missing">Article identifier is missing.</string>
+    <string name="action_read_online">Read on Web</string>
+    <string name="details_fallback_title">Details</string>
+    <string name="article_author_unknown">Author Unknown</string>
+    <string name="action_back">Back</string>
+
 </resources>
