@@ -25,4 +25,10 @@ object UseCaseModule {
     fun provideRefreshTopHeadlinesUseCase(repository: NewsRepository): RefreshTopHeadlinesUseCase {
         return RefreshTopHeadlinesUseCase(repository)
     }
+
+    @Provides
+    @Singleton
+    fun provideGetArticleByUrlUseCase(repository: NewsRepository): GetArticleByUrlUseCase {
+        return GetArticleByUrlUseCase(repository)
+    }
 }
