@@ -1,5 +1,6 @@
 package com.pt.criticaltechworkschallenge.di
 
+import com.pt.criticaltechworkschallenge.data.api.NewsApiService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -26,8 +27,15 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient = OkHttpClient
+    fun provideAuthInterceptor(): AuthInterceptor {
+        return AuthInterceptor()
+    }
+
+    @Provides
+    @Singleton
+    fun provideOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor, authInterceptor: AuthInterceptor): OkHttpClient = OkHttpClient
         .Builder()
+        .addInterceptor(authInterceptor)
         .addInterceptor(httpLoggingInterceptor)
         .build()
 
@@ -47,5 +55,11 @@ object NetworkModule {
             .client(okHttpClient)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideNewsApiService(retrofit: Retrofit): NewsApiService {
+        return retrofit.create(NewsApiService::class.java)
     }
 }
