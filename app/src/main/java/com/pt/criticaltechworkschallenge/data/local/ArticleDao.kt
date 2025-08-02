@@ -14,7 +14,7 @@ interface ArticleDao {
     fun getAllArticles(): Flow<List<Article>>
 
     @Query("SELECT * FROM articles WHERE url = :url")
-    fun getArticleByUrl(url: String): Flow<Article>
+    fun getArticleByUrl(url: String): Flow<Article?>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertOrUpdateArticles(articles: List<Article>)

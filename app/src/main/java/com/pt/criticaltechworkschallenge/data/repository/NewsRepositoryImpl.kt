@@ -14,13 +14,14 @@ class NewsRepositoryImpl @Inject constructor(
     private val articleDao: ArticleDao
 ) : NewsRepository {
     override suspend fun refreshTopHeadlines(sourceId: String) {
-        articleDao.deleteAllArticles()
+
         val response = remoteData.getTopHeadlines(sourceId)
         if (response.isSuccessful && response.body() != null) {
             val domainArticles = response.body()!!.articleResponse.map { it.toDomain() }
+            articleDao.deleteAllArticles()
             articleDao.insertOrUpdateArticles(domainArticles)
         } else {
-            throw IOException(response.message())
+            throw Exception("Request failed with code. Code: ${response.code()}")
         }
     }
 
@@ -28,7 +29,7 @@ class NewsRepositoryImpl @Inject constructor(
         return articleDao.getAllArticles()
     }
 
-    override fun getArticleByUrl(url: String): Flow<Article> {
+    override fun getArticleByUrl(url: String): Flow<Article?> {
         return articleDao.getArticleByUrl(url)
     }
 }
