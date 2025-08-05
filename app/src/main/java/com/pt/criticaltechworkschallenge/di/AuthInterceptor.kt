@@ -13,7 +13,7 @@ class AuthInterceptor : Interceptor {
             .build()
 
         val request = originalRequest.newBuilder()
-            .addHeader("X-Api-Key", BuildConfig.NEWS_API_KEY)
+            .addHeader("X-Api-Key", BuildConfig.API_KEY)
             .url(url)
             .build()
 

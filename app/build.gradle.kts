@@ -27,7 +27,7 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         android.buildFeatures.buildConfig = true
-        buildConfigField("String", "NEWS_API_KEY", "\"${properties.getProperty("NEWS_API_KEY") ?: "2e1a6d5058ee4b88824194b40d1d5df6"}\"")
+        buildConfigField("String", "API_KEY", "\"${properties.getProperty("API_KEY")}\"")
     }
 
     buildTypes {
